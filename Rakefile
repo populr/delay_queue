@@ -15,13 +15,14 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "delay_queue"
-  gem.homepage = "http://github.com/dnelson-cs/delay_queue"
+  gem.homepage = "http://github.com/centresource/delay_queue"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A thread safe, Redis backed queue with the ability to delay items from being dequeued}
+  gem.description = %Q{A thread safe, Redis backed queue with the ability to delay items from being dequeued}
   gem.email = "dnelson@centresource.com"
   gem.authors = ["Daniel Nelson"]
   # dependencies defined in Gemfile
+  gem.files.exclude 'spec'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
