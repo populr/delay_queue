@@ -31,6 +31,9 @@ In your Gemfile:
 
 Example:
 
+    $ irb
+    require 'redis'
+    require 'delay_queue'
     redis = Redis.new(:host => '127.0.0.1', :port => '6379')
     queue = DelayQueue.new(redis, 'bug_notification_queue')
     queue.enqueue('123')
