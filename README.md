@@ -31,32 +31,32 @@ In your Gemfile:
 
 Example:
 
-  redis = Redis.new(:host => '127.0.0.1', :port => '6379')
-  queue = DelayQueue.new(redis, 'bug_notification_queue')
-  queue.enqueue('123')
-  queue.dequeue
-    - '123'
+    redis = Redis.new(:host => '127.0.0.1', :port => '6379')
+    queue = DelayQueue.new(redis, 'bug_notification_queue')
+    queue.enqueue('123')
+    queue.dequeue
+      - '123'
 
-  queue.enqueue('123', :delay => 3)
-  queue.dequeue
-    - nil
-  sleep 3
-  queue.dequeue
-    - '123'
+    queue.enqueue('123', :delay => 3)
+    queue.dequeue
+      - nil
+    sleep 3
+    queue.dequeue
+      - '123'
 
-  queue.enqueue('123', :until => Time.now + 3)
-  queue.dequeue
-    - nil
-  sleep 3
-  queue.dequeue
-    - '123'
+    queue.enqueue('123', :until => Time.now + 3)
+    queue.dequeue
+      - nil
+    sleep 3
+    queue.dequeue
+      - '123'
 
-  queue.enqueue('123')
-  queue.enqueue('123')
-  queue.dequeue
-    - '123'
-  queue.dequeue
-    - nil
+    queue.enqueue('123')
+    queue.enqueue('123')
+    queue.dequeue
+      - '123'
+    queue.dequeue
+      - nil
 
 
 Contributing to delay_queue
