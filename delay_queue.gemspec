@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "delay_queue.gemspec",
     "lib/delay_queue.rb",
     "spec/delay_queue_spec.rb",
     "spec/spec_helper.rb"
