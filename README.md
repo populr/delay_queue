@@ -61,6 +61,8 @@ Example:
     queue.dequeue
       - nil
 
+Note that since DelayQueue uses Redis, all items are queued and returned as strings.
+
 
 Contributing to delay_queue
 ==========================
