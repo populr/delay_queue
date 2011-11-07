@@ -13,7 +13,7 @@ Use Cases
 Throttling
 ----------
 
-For example, if you want to send notifications to users when something happens, but you don't want users to be flooded with notifications (eg: bug report emails), you could put a user id into a 'bug_notifications' queue every time a bug occurs, setting the dequeue time to @user.last_notified_at + MAX_NOTIFY_FREQUENCY. The uniqueness constraint ensures that the user only gets added once until it is next dequeued, while the time constraint ensures that the user id will only be dequeued once per MAX_NOTIFY_FREQUENCY.
+For example, if you want to send notifications when something happens, but you don't want to flood any one recipient with notifications (eg: when an exception is thrown), you could put an application id into an 'exception_notifications' queue every time an exception is logged, setting the dequeue time to @application.last_notified_at + MAX_NOTIFY_FREQUENCY. The uniqueness constraint ensures that the application id only gets added once until it is next dequeued, while the time constraint ensures that the application id will only be dequeued once per MAX_NOTIFY_FREQUENCY.
 
 External Resources
 ------------------
