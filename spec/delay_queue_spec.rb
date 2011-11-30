@@ -56,6 +56,15 @@ describe "DelayQueue" do
     end
   end
 
+  describe "#delete" do
+    it "should remove the element from the queue, whether or not it is ready to be dequeued" do
+      @queue.enqueue('test')
+      @queue.should_not be_empty
+      @queue.delete('test')
+      @queue.should be_empty
+    end
+  end
+
   describe "#delete_all!" do
     it "should remove all elements from the queue, whether or not they are ready to be dequeued" do
       @queue.enqueue('test')
