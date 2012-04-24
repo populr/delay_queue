@@ -12,10 +12,10 @@ describe "DelayQueue" do
 
   describe "#enqueue" do
     it "should enable the specification of a time before which the item may not be dequeued" do
-      @queue.enqueue('a', :until => Time.now + 2)
+      @queue.enqueue('a', :until => Time.now + 3)
       sleep 1
       @queue.dequeue.should be_nil
-      sleep 2
+      sleep 3
       @queue.dequeue.should == 'a'
     end
 
