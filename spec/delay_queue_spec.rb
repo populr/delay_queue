@@ -20,10 +20,10 @@ describe "DelayQueue" do
     end
 
     it "should enable the specification of a delay to wait before releasing the item from the queue" do
-      @queue.enqueue('a', :delay => 2)
+      @queue.enqueue('a', :delay => 3)
       sleep 1
       @queue.dequeue.should be_nil
-      sleep 2
+      sleep 3
       @queue.dequeue.should == 'a'
     end
 
@@ -33,7 +33,7 @@ describe "DelayQueue" do
         @queue.dequeue.should == 'a'
       end
     end
-    
+
     context "enqueing an item more than once" do
       it "should not add the item a second time" do
         @queue.enqueue('a')
