@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "delay_queue"
-  s.version = "1.0.1"
+  s.version = "1.0.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Daniel Nelson"]
-  s.date = "2012-04-24"
+  s.date = "2012-05-10"
   s.description = "A thread safe, Redis backed queue with the ability to delay items from being dequeued"
-  s.email = "dnelson@centresource.com"
+  s.email = "daniel@populr.me"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.md"
