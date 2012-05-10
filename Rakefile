@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{A thread safe, Redis backed queue with the ability to delay items from being dequeued}
   gem.description = %Q{A thread safe, Redis backed queue with the ability to delay items from being dequeued}
-  gem.email = "dnelson@centresource.com"
+  gem.email = "daniel@populr.me"
   gem.authors = ["Daniel Nelson"]
   # dependencies defined in Gemfile
   gem.files.exclude 'spec'

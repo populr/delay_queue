@@ -11,7 +11,7 @@ class DelayQueue
   end
 
   def delete_all!
-    @redis.zremrangebyrank(@queue_name, 0, -1)
+    @redis.del(@queue_name)
   end
 
   def empty?
