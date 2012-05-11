@@ -124,13 +124,13 @@ describe "DelayQueue" do
     context "when the lock is taken, but expired" do
       it "should be true" do
         @queue.acquire_lock
-        sleep(3)
+        sleep(1)
         @queue.break_lock.should be_true
       end
 
       it "should lock the resource" do
         @queue.acquire_lock
-        sleep(3)
+        sleep(1)
         @queue.break_lock
         @queue.acquire_lock.should be_false
       end
@@ -138,7 +138,7 @@ describe "DelayQueue" do
 
     it "should be able to break an expired lock acquired through breaking a lock" do
       @queue.break_lock
-      sleep(3)
+      sleep(1)
       @queue.break_lock.should be_true
     end
   end

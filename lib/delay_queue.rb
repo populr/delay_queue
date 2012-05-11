@@ -46,7 +46,7 @@ class DelayQueue
       release_lock
       item
     else # couldn't acquire or break the lock. wait and try again
-      sleep 1
+      sleep 0.01
       dequeue
     end
   end
@@ -66,7 +66,7 @@ class DelayQueue
 
   private
 
-  LOCK_DURATION = 3
+  LOCK_DURATION = 1
 
   def new_lock_expiration
     (Time.now + LOCK_DURATION).to_i
