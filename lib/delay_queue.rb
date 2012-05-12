@@ -46,6 +46,8 @@ class DelayQueue
       release_lock
       item
     else # couldn't acquire or break the lock. wait and try again
+      # a small sleep value is actually faster than no sleep value, presumably because no
+      # delay puts too much stress on Redis
       sleep 0.01
       dequeue
     end
