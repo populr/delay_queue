@@ -6,6 +6,10 @@ class DelayQueue
     @lock_name = 'lock.' + @queue_name
   end
 
+  def include?(item)
+    @redis.zscore(@queue_name, item)
+  end
+
   def delete(item)
     @redis.zrem(@queue_name, item)
   end

@@ -56,6 +56,21 @@ describe "DelayQueue" do
     end
   end
 
+  describe "#include?" do
+    context "when the queue does not contain the element" do
+      it "should be false" do
+        @queue.include?('test').should be_false
+      end
+    end
+
+    context "when the queue contains the element" do
+      it "should be true" do
+        @queue.enqueue('test')
+        @queue.include?('test').should be_true
+      end
+    end
+  end
+
   describe "#delete" do
     it "should remove the element from the queue, whether or not it is ready to be dequeued" do
       @queue.enqueue('test')
